@@ -20,7 +20,8 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>Hi, I&apos;m Kyle. I am a fourth year software engineering student at <a href="https://www.mcmaster.ca/"> 
-  McMaster University</a> with a minor in math and a passion for artifical intelligence. This website is my place to show the projects I've been working on.
+          McMaster University</a> with a minor in math and a passion for artifical intelligence.
+          This website is my place to show the projects I&apos;ve been working on.
       </p>
       <ul className="actions">
         <li>
