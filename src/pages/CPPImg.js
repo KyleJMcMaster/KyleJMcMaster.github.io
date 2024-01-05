@@ -3,11 +3,11 @@ import Markdown from 'markdown-to-jsx';
 
 import Main from '../layouts/Main';
 
-const Twenty48 = () => {
+const CPPimg = () => {
   const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
-    import('../data/Twenty48.md')
+    import('../data/CPPImg.md')
       .then((res) => {
         fetch(res.default)
           .then((r) => r.text())
@@ -17,10 +17,10 @@ const Twenty48 = () => {
 
   return (
     <Main
-      title="Twenty48"
-      description="Project page for Twenty48"
+      title="CPPimg"
+      description="Project Page for C++ image processing"
     >
-      <article className="post markdown" id="Twenty48">
+      <article className="post markdown" id="about">
         <Markdown>
           {markdown}
         </Markdown>
@@ -30,4 +30,4 @@ const Twenty48 = () => {
   );
 };
 
-export default Twenty48;
+export default CPPimg;
