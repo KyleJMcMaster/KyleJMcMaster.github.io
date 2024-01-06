@@ -41,7 +41,7 @@ describe('renders the app', () => {
   });
 
   it('should render the title', async () => {
-    expect(document.title).toBe("Kyle McMaster");
+    expect(document.title).toBe('Kyle McMaster');
   });
 
   it('can navigate to /about', async () => {
@@ -59,7 +59,6 @@ describe('renders the app', () => {
     expect(textMock).toHaveBeenCalledTimes(1);
   });
 
-
   it('can navigate to /projects', async () => {
     expect.assertions(3);
     const contactLink = document.querySelector('#header > nav > ul > li:nth-child(2) > a');
@@ -70,8 +69,6 @@ describe('renders the app', () => {
     expect(document.title).toContain('Projects |');
     expect(window.location.pathname).toBe('/projects');
   });
-
-
 
   it('can navigate to /contact', async () => {
     expect.assertions(3);
