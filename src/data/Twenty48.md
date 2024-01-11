@@ -38,7 +38,7 @@ These properties fit the criteria for a mathematical structure known as a [Marko
 Determining our action space is very straightforward. On each turn, the player can either move up, down, left, or right. 
 
 <center>
-<math display="block" class="tml-display" style="display:block math;">
+<math>
   <mrow>
     <mi>A</mi>
     <mo>=</mo>
@@ -62,8 +62,38 @@ Writing out our state space is slightly more challenging. For each of the 16 squ
 
 <center>
 <math>
-
-
+  <mrow>
+    <mo form="prefix" stretchy="false">(</mo>
+    <mi>∀</mi>
+    <mtext>tile</mtext>
+    <mo>∈</mo>
+    <mtext>board</mtext>
+    <mi>|</mi>
+    <mtext>tile.value</mtext>
+    <mo>=</mo>
+    <mn>0</mn>
+    <mo>∨</mo>
+    <mo form="prefix" stretchy="false">(</mo>
+    <msub>
+      <mi>log</mi>
+      <mn>2</mn>
+    </msub>
+    <mo>⁡</mo>
+    <mo form="prefix" stretchy="false">(</mo>
+    <mtext>tile.value</mtext>
+    <mo form="postfix" stretchy="false">)</mo>
+    <mo>∈</mo>
+    <mi>𝕫</mi>
+    <mo>∧</mo>
+    <mtext>tile.value</mtext>
+    <mo>≤</mo>
+    <msup>
+      <mn>2</mn>
+      <mn>17</mn>
+    </msup>
+    <mo form="postfix" stretchy="false">)</mo>
+    <mo form="postfix" stretchy="false">)</mo>
+  </mrow>
 </math>
 </center>
 
