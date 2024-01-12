@@ -37,6 +37,8 @@ These properties fit the criteria for a mathematical structure known as a [Marko
 
 Determining our action space is very straightforward. On each turn, the player can either move up, down, left, or right. 
 
+<br>
+
 <center>
 <math display="block" class="tml-display">
   <mrow>
@@ -60,6 +62,10 @@ Determining our action space is very straightforward. On each turn, the player c
 Writing out our state space is slightly more challenging. For each of the 16 squares on the board, we either have no tile, or a tile with a value ranging from 
 2<sup>1</sup> to the maximum possible tile value 2<sup>17</sup>. Further, some combinations of tiles are impossible. For example, there can only be one 2<sup>17</sup> tile. Luckily for us, we do not need to list all the states. Instead, we can come up with a set of criteria for what constitues a valid state, a procedure for transitioning from a general valid state to the next, and a way to determine the rewards after performing that transition. To simplify, our validity criteria will also include unreachable states. This will not affect our ability to come up with optimal solutions for the MDP.
 
+<br>
+
+The following conditions must be satisfied for a state **s** to be in **S**, the set of valid states:
+
 <center>
 <math display="block" class="tml-display">
   <mrow>
@@ -69,6 +75,7 @@ Writing out our state space is slightly more challenging. For each of the 16 squ
     <mo>∈</mo>
     <mtext>board</mtext>
     <mi>|</mi>
+    <mo lspace="0.2222em" rspace="0.2222em">:</mo>
     <mtext>tile.value</mtext>
     <mo>=</mo>
     <mn>0</mn>
@@ -99,9 +106,36 @@ Writing out our state space is slightly more challenging. For each of the 16 squ
 
 <br>
 
-What makes it challenging: Huge state space, low probability of any one move happening, easy for randomness to get decent scores, random starting state, no immediate rewards,
+<center>
+<math display="block" class="tml-display">
+  <mrow>
+    <mo form="prefix" stretchy="false">(</mo>
+    <mo form="prefix" stretchy="false">+</mo>
+    <mtext>tile</mtext>
+    <mo>∈</mo>
+    <mtext>board</mtext>
+    <mi>|</mi>
+    <mtext>tile.value</mtext>
+    <mo>&gt;</mo>
+    <mn>0</mn>
+    <mo lspace="0.2222em" rspace="0.2222em">:</mo>
+    <mn>1</mn>
+    <mo form="postfix" stretchy="false">)</mo>
+    <mo>≥</mo>
+    <mn>2</mn>
+  </mrow>
+</math>
+</center>
 
 <br>
+
+In natural language, the first statement says that each tile must either have a value of 0, or have a value that is a power of 2 that is less than 2<sup>17</sup>. The second statement says that there must always be at least 2 non-zero tiles for a state to be valid.
+
+<br>
+
+Now that we have a description of our action space **A**, and our state space **S**, we can begin to describe the effect our actions have on our state. 
+
+What makes it challenging: Huge state space, low probability of any one move happening, easy for randomness to get decent scores, random starting state, no immediate rewards,
 
 ### Evaluating AI Agents
 
