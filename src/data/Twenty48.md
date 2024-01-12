@@ -38,7 +38,7 @@ These properties fit the criteria for a mathematical structure known as a [Marko
 Determining our action space is very straightforward. On each turn, the player can either move up, down, left, or right. 
 
 <center>
-<math>
+<math display="block" class="tml-display">
   <mrow>
     <mi>A</mi>
     <mo>=</mo>
@@ -61,7 +61,7 @@ Writing out our state space is slightly more challenging. For each of the 16 squ
 2<sup>1</sup> to the maximum possible tile value 2<sup>17</sup>. Further, some combinations of tiles are impossible. For example, there can only be one 2<sup>17</sup> tile. Luckily for us, we do not need to list all the states. Instead, we can come up with a set of criteria for what constitues a valid state, a procedure for transitioning from a general valid state to the next, and a way to determine the rewards after performing that transition. To simplify, our validity criteria will also include unreachable states. This will not affect our ability to come up with optimal solutions for the MDP.
 
 <center>
-<math>
+<math display="block" class="tml-display">
   <mrow>
     <mo form="prefix" stretchy="false">(</mo>
     <mi>∀</mi>
