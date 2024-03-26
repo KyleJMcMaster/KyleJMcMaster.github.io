@@ -129,23 +129,34 @@ The following conditions must be satisfied for a state **s** to be in **S**, the
 
 <br>
 
-In natural language, the first statement says that each tile must either have a value of 0, or have a value that is a power of 2 that is less than 2<sup>17</sup>. The second statement says that there must always be at least 2 non-zero tiles for a state to be valid.
+In natural language, the first statement says that each tile must either have a value of 0, or have a value that is a power of 2 that is less than or equal to 2<sup>17</sup>. The second statement says that there must always be at least 2 non-zero tiles for a state to be valid.
 
 <br>
 
-Now that we have a description of our action space **A**, and our state space **S**, we can begin to describe the effect our actions have on our state. 
+Now that we have a description of our action space **A**, and our state space **S**, we can begin to describe the effect our actions have on our state. When an action is applied to a given state, it will cause all the tiles on the board to move towards the direction selected. If two equal tiles are touching after the shift has been completed, they will combine into one tile with a value equal to the sum of the two original tiles.
+
+<center><figure>
+    <img src="/images/projects/Twenty48/move_example.png" alt="Image of 2048 move" class="center" width="400">
+    <figcaption>Sample 2048 transition</figcaption>
+</figure></center>
+
+If a transition causes any tiles to move, a new tile will be added to the board. This tile has equal chance to appear in any of the remaining empty spaces with a 90% chance to have a value of 2 and a 10% chance to have a value of 4. This is considered the 'response' of the environment to our selected action.
+
+We have now defined **A**, **S**, and **T**. The last remaining thing to determine is **R(s,a)**. This is where we begin to encounter a challenge. Our goal is to reach a high score at the end of the game, which is likely hundreds of turns away. Each individual turn contributes to reaching that goal, but in a way that is very hard to quantify. One potential strategy is to simply see which action increases the score by the largest amount each turn. This will work well for a while, but once the board becomes very populated, it begins to break down very quickly. The goal of an artificial intelligence playing 2048 should be to estimate the expected reward of selecting an action in each turn. This will allow us to make an informed decision for the next move to make and ultimately maximize our final score.
+
+
+
+### Creating AI Agents
 
 What makes it challenging: Huge state space, low probability of any one move happening, easy for randomness to get decent scores, random starting state, no immediate rewards,
 
-### Evaluating AI Agents
-
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."  
+Nothing here yet!
 
 <br>
 
 ### Building Twenty48
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."  
+Nothing here yet! 
 
 <br>
 
